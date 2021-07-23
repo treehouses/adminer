@@ -1,10 +1,16 @@
 FROM {{base_image}}
 
-RUN	echo "upload_max_filesize = 128M" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
-&&	echo "post_max_size = 128M" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
-&&	echo "memory_limit = 1G" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
-&&	echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
-&&	echo "max_input_vars = 5000" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini
+#RUN	echo "upload_max_filesize = 128M" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
+#&&	echo "post_max_size = 128M" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
+#&&	echo "memory_limit = 1G" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
+#&&	echo "max_execution_time = 600" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini \
+#&&	echo "max_input_vars = 5000" >> /usr/local/etc/php/conf.d/0-upload_large_dumps.ini
+
+RUN	echo "upload_max_filesize = 128M" >> /etc/php7/conf.d/0-upload_large_dumps.ini \
+&&	echo "post_max_size = 128M" >> /etc/php7/conf.d/0-upload_large_dumps.ini \
+&&	echo "memory_limit = 1G" >> /etc/php7/conf.d/0-upload_large_dumps.ini \
+&&	echo "max_execution_time = 600" >> /etc/php7/conf.d/0-upload_large_dumps.ini \
+&&	echo "max_input_vars = 5000" >> /etc/php7/conf.d/0-upload_large_dumps.ini
 
 STOPSIGNAL SIGINT
 
