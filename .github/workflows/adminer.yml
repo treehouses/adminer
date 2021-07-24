@@ -21,7 +21,7 @@ jobs:
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
           repo="dyeh123/adminer"
-          base="dyeh123/php"
+          base="dyeh123/php-1"
           source .github/workflows/utils.sh
           echo "amd64"
           baseamd64=$(get_variant_sha "$base" "latest" "amd64")
